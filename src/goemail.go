@@ -78,7 +78,7 @@ func SendEmail(ep *EmailParam) {
 func main() {
     serverHost := "smtp.qq.com"//"smtp.exmail.qq.com"
     serverPort := 465
-    fromEmail := "1281185088@qq.com"//"test@latelee.org" 发送者邮箱
+    fromEmail := "1**8@qq.com"//"test@latelee.org" 发送者邮箱
     fromPasswd := "hztebcspwpqfbafj" //"1qaz@WSX"  授权码
     myToers :=""//"li@latelee.org, latelee@163.com" // 逗号隔开 接收者邮箱
     myCCers := "huanggang1106@sina.com" //"readchy@163.com"抄送者
