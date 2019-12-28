@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发送邮件</title>
+<style type="text/css">
+.pannel{
+        width:96%;
+        height:650px;
+        overflow:hidden;
+        margin:20px auto 0;
+        background-color:#fff;
+    }
+
+.form_group{
+    overflow:hidden;
+    margin-bottom:15px;
+}
+
+.form_group label{
+    float:left;
+    width:12%;
+    line-height:30px;
+    text-align:right;
+    font-size:14px;
+}
+
+.form_group .input_txt2{
+    width:86%;
+    height:30px;
+    float:left;
+    text-indent:10px;
+    outline:none;
+    border-radius:4px;
+    border:1px solid #d0d0d0;
+    box-sizing:border-box;
+}
+
+.form_group .input_multxt{
+    width:86%;
+    height:300px;
+    float:left;
+    padding:10px;
+    outline:none;
+    font-family:'Microsoft YaHei';
+    font-size:14px;
+    border-radius:4px;
+    border:1px solid #d0d0d0;
+    box-sizing:border-box;
+}
+
+.form_group .input_multxt{
+    height:200px;
+}
+.indent_group{
+    text-indent:12%;
+    margin-top:15px;
+}
+.line_top{
+    border-top:1px solid #ddd;
+    padding:10px 0px;
+}
+.input_file{
+    margin-top:4px;
+}
+</style>
+</head>
+<body>
+<div class="pannel">
+ <form method="post" action="/" enctype="multipart/form-data">
+    <h3 align="center">邮件发送</h3>
+     <div class="form_group">
+     <label>邮箱地址：</label>
+     <input type="text" class="input_txt2" placeholder="格式：smtp.qq.com" name="serverHost" >
+    </div>
+     <div class="form_group">
+         <label>邮箱端口：</label>
+         <input type="text" class="input_txt2" placeholder="格式：只能是数字" name="serverPort" >
+     </div>
+     <div class="form_group">
+         <label>授权码：</label>
+         <input type="text" class="input_txt2" placeholder="格式：只能是数字" name="fromPasswd" >
+     </div>
+    <div class="form_group">
+        <label>邮件主题：</label>
+        <input type="text" class="input_txt2" placeholder="主题" name="subject" >
+    </div>
+     <div class="form_group">
+         <label>发送者：</label>
+         <input type="text" class="input_txt2" placeholder="格式：**@**.**"  name="fromEmail" >
+     </div>
+     <div class="form_group">
+         <label>接收者：</label>
+         <input type="file" class="input_file" placeholder="只能后缀名.xlsx"  name="uploadname">
+     </div>
+    <div class="form_group">
+        <label>抄送：</label>
+        <input type="text" class="input_txt2" placeholder="填/不填均可，多个抄送者用逗号隔开" name="myCCers" >
+    </div>
+
+    <div class="form_group">
+        <label>邮件内容：</label>
+        <textarea class="input_multxt" name="content" placeholder="内容"></textarea>
+    </div>
+     <div class="form_group indent_group line_top">
+         <input type="submit" value="发 送" class="confirm">
+     </div>
+ </form>
+</div>
+</body>
+</html>
