@@ -1,5 +1,11 @@
 package controllers
 
+/*
+实现发送邮件：
+1.邮箱信息
+2.接收者的邮箱通过读取xsxl文件读取，用“ ，”进行切割用户
+3.抄送者，通过逗号进行切割
+*/
 import (
 	"github.com/astaxie/beego"
 	"github.com/go-gomail/gomail"
@@ -9,7 +15,6 @@ import (
 	"sendEmail/models"
 	"strings"
 	"path"
-	//"fmt"
 	"fmt"
 )
 type MainController struct {
@@ -65,8 +70,8 @@ func (c *MainController)SendEmail(ep *models.EmailParam) {
 func (c *MainController) Post(){
 	serverHost := c.GetString("serverHost") //"smtp.qq.com"
 	serverPort,_ := c.GetInt("serverPort") //465 返回int err
-	fromEmail :=  c.GetString("fromEmail") //"1281185088@qq.com"// 发送者邮箱
-	fromPasswd := c.GetString("fromPasswd")//"hztebcspwpqfbafj"// 授权码
+	fromEmail :=  c.GetString("fromEmail") //"18@qq.com"// 发送者邮箱
+	fromPasswd := c.GetString("fromPasswd")//"*ztebcspwpqfbafj"// 授权码h
 	myToers :=""// 逗号隔开 接收者邮箱
 	myCCers := c.GetString("myCCers")//"hongery@yeah.net" //抄送者邮箱
 	//1.拿到要发送的主题和内容
